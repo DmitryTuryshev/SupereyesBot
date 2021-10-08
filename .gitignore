@@ -1,0 +1,5 @@
+/venv
+/app/database/db
+/app/database/*.db
+/.idea
+**/__pycache__/
