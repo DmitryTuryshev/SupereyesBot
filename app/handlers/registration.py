@@ -54,16 +54,16 @@ async def reg_birthday(message: types.Message, state: FSMContext):
     except:
         await message.answer("Некорректо введена дата.\n"
                              "Введите дату рождения в формате:\n"
-                             "дд.мм.гггг",reply_markup=keyboard)
+                             "    дд.мм.гггг",reply_markup=keyboard)
         return
 
 
     data=await state.get_data()
     add_user(message.from_user.id, data['user_name'], dates)
-    await message.answer(f"Вы успешно зарегистрировались\n"
+    await message.answer(f"Вы успешно зарегистрировались!\n\n"
                          f"Ваше ФИО:  {data['user_name']}\n"
-                         f"Ваша дата рождения:  {date}\n"
-                         f"Для перехода в меню /cancel",
+                         f"Ваша дата рождения:  {date}\n\n"
+                         f"Меню: /cancel",
                          reply_markup=keyboard)
     await state.finish()
 

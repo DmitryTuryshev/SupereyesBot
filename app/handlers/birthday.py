@@ -58,7 +58,7 @@ async def birthday_start(message: types.Message, state: FSMContext):
                         else:
                             mes += f"    Статус:  <i>подарена</i>\n\n"
 
-    mes += "\nменю: /cancel"
+    mes += "\nМеню: /cancel"
     await message.answer(mes, parse_mode=types.ParseMode.HTML)
 
 

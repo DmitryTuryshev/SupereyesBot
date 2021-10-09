@@ -44,7 +44,7 @@ async def send_notification_to_admin(bot: Bot):
                     else:
                         mes += f"    Статус:  <i>подарена</i>\n\n"
 
-    mes += "\nменю: /cancel"
+    mes += "\nМеню: /cancel"
     if len(users_n) < 1:
         print("Нет получателей рассылки")
         return

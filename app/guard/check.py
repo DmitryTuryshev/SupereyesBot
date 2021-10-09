@@ -27,16 +27,16 @@ def check_reg(id):
 
 def check(id):
     if not check_reg(id):
-        answer='Вы не зарегистрированы.\n'\
-                             'Для регистрации: /reg\n'\
-                             'Меню: /cancel'
+        answer = 'Вы не зарегистрированы.\n\n' \
+                 'Для регистрации: /reg\n' \
+                 'Меню: /cancel'
         return answer
     if not check_access(id):
-        answer='У вас нет доступа\n' \
-               'Меню: /cancel'
+        answer = 'У вас нет доступа\n\n' \
+                 'Меню: /cancel'
         return answer
     if not check_permision(id):
-        answer = 'У вас нет на это прав\n' \
+        answer = 'У вас нет на это прав\n\n' \
                  'Меню: /cancel'
         return answer
     return False

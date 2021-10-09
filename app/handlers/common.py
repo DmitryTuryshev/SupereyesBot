@@ -8,18 +8,18 @@ async def cmd_start(message: types.Message, state: FSMContext):
     await state.finish()
 
     if not check_access(message.from_user.id):
-        await message.answer('У вас нет доступа')
+        await message.answer('У вас нет доступа.')
         return
     if not check_reg(message.from_user.id):
         await message.answer('Вы не зарегистрированы.\n\n'
-                             'Зарегистрироваться (/reg)',  reply_markup=types.ReplyKeyboardRemove())
+                             'Зарегистрироваться: /reg',  reply_markup=types.ReplyKeyboardRemove())
         return
 
     menu = "Задайте вопрос боту:\n\n" \
-           "1. Книги (/book)\n" \
-           "2. Ближайший ДР (/birthday)\n"
+           "1. Книги: /book\n" \
+           "2. Ближайший ДР: /birthday\n"
     if not check(message.from_user.id):
-        menu += "3. Управление (/admin)\n"
+        menu += "3. Управление: /admin\n"
     await message.answer(
         menu,
         reply_markup=types.ReplyKeyboardRemove()

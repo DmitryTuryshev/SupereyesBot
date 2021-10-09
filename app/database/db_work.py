@@ -1,7 +1,6 @@
 import sqlite3
 
 conn = sqlite3.connect("app/database/dbBirthday.db")
-# conn = sqlite3.connect("dbBirthday.db")
 cursor = conn.cursor()
 
 
@@ -25,19 +24,17 @@ def get_user(id):
 
 def get_users(access=1):
     sql = f"select * from users where role<>'s_admin' and access={access}"
-    print(sql)
     return cursor.execute(sql).fetchall()
+
 
 def get_users_by_notification(notification=1):
     sql = f"select * from users where role<>'s_admin' and notification={notification}"
-    print(sql)
     return cursor.execute(sql).fetchall()
 
 
 def add_book(id, name, author, priority):
     sql = "insert into books (name_book, author, id_user, priority)" \
           "values(?,?,?,?)"
-    print(sql)
     cursor.execute(sql, [name, author, id, priority])
     conn.commit()
 
@@ -60,14 +57,12 @@ def remove_book_by_id(id):
 
 def change_status_book_by_id(id, status="present"):
     sql = f"update books set status='{status}' where id_book = {id}"
-    print(sql)
     cursor.execute(sql)
     conn.commit()
 
 
 def change_name(id, name):
     sql = f"update books set name_book='{name}' where id_book={id}"
-    print(sql)
     cursor.execute(sql)
     conn.commit()
 
@@ -99,9 +94,8 @@ def get_users_by_cur_date_n(before_notification=31):
 
 
 def set_last_notification_date(id):
-    sql=f"update users set date_last_notification=CURRENT_DATE where id_tel='{id}'"
-    print(sql)
-    cursor.execute((sql))
+    sql = f"update users set date_last_notification=CURRENT_DATE where id_tel='{id}'"
+    cursor.execute(sql)
     conn.commit()
 
 

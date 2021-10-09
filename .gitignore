@@ -4,3 +4,4 @@
 /app/database/*.db
 /.idea
 **/__pycache__/
+/config
