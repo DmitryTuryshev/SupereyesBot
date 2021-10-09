@@ -1,5 +1,6 @@
 /venv
 /app/database/db
+/app/database/server
 /app/database/*.db
 /.idea
 **/__pycache__/

@@ -24,7 +24,8 @@ async def birthday_start(message: types.Message, state: FSMContext):
     users = get_users_by_cur_date()
 
     if len(users) < 1:
-        mes = "В ближайшее время нет именинников!\n"
+        mes = "В ближайшее время нет именинников!\n\n" \
+              "Меню: /cancel"
         await message.answer(mes, parse_mode=types.ParseMode.HTML)
         return
     else:
