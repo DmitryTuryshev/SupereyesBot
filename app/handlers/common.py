@@ -16,10 +16,10 @@ async def cmd_start(message: types.Message, state: FSMContext):
         return
 
     menu = "Задайте вопрос боту:\n\n" \
-           "1. Книги: /book\n" \
-           "2. Ближайший ДР: /birthday\n"
+           "1. 📚Книги: /book\n" \
+           "2. 🎂Ближайший ДР: /birthday\n"
     if not check(message.from_user.id):
-        menu += "3. Управление: /admin\n"
+        menu += "3. ⛑Управление: /admin\n"
     await message.answer(
         menu,
         reply_markup=types.ReplyKeyboardRemove()

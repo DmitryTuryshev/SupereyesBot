@@ -36,18 +36,18 @@ async def cmd_book(message: types.Message, state: FSMContext):
     else:
         menu = "Ваши книги:\n\n"
         for index, book in enumerate(books):
-            menu += f"    Название:  <i>{book[1]}</i>\n"
-            menu += f"    Автор:  <i>{book[2]}</i>\n"
-            menu += f"    Приоритет:  <i>{book[4]}</i>\n"
+            menu += f"    Название📖:  <i>{book[1]}</i>\n"
+            menu += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+            menu += f"    Приоритет❤:  <i>{book[4]}</i>\n"
             if book[3] == "active":
-                menu += f"    Статус:  <i>активна</i>\n\n"
+                menu += f"    Статус🔄:  <i>активна</i>\n\n"
             else:
-                menu += f"    Статус:  <i>подарена</i>\n\n"
+                menu += f"    Статус🔄:  <i>подарена</i>\n\n"
 
     menu += "1. Добавить книгу (/add_b)\n" \
             "2. Изменить название, автора или приоритет книги (/ch_b)\n" \
             "3. Удалить книгу (/del_b)\n\n"\
-            "меню: /cancel\n"
+            "Меню: /cancel\n"
 
     await message.answer(
         menu,
@@ -127,9 +127,9 @@ async def cmd_remove_book(message: types.Message, state: FSMContext):
         book_numbers = []
         menu = "Ваши книги:\n\n"
         for index, book in enumerate(books):
-            menu += f"    Название:  <i>{book[1]}</i>\n"
-            menu += f"    Автор:  <i>{book[2]}</i>\n"
-            menu += f"    Приоритет:  <i>{book[4]}</i>\n"
+            menu += f"{index+1}.  Название📖:  <i>{book[1]}</i>\n"
+            menu += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+            menu += f"    Приоритет❤:  <i>{book[4]}</i>\n\n"
             book_numbers.append(book[0])
     menu += "Выберите номер книги для удаления:"
 
@@ -176,9 +176,9 @@ async def cmd_change_book(message: types.Message, state: FSMContext):
         book_numbers = []
         menu = "Ваши книги:\n\n"
         for index, book in enumerate(books):
-            menu += f"    Название:  <i>{book[1]}</i>\n"
-            menu += f"    Автор:  <i>{book[2]}</i>\n"
-            menu += f"    Приоритет:  <i>{book[4]}</i>\n"
+            menu += f"{index+1}.  Название📖:  <i>{book[1]}</i>\n"
+            menu += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+            menu += f"    Приоритет❤:  <i>{book[4]}</i>\n"
             book_numbers.append(book[0])
     menu += "Выберите номер книги для изменения:"
 

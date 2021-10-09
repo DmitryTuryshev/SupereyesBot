@@ -36,13 +36,9 @@ async def send_notification_to_admin(bot: Bot):
                 for index, book in enumerate(books):
                     if index>3:
                         break
-                    mes += f"    Название:  <i>{book[1]}</i>\n"
-                    mes += f"    Автор:  <i>{book[2]}</i>\n"
-                    mes += f"    Приоритет:  <i>{book[4]}</i>\n"
-                    if book[3]=="active":
-                        mes += f"    Статус:  <i>активна</i>\n\n"
-                    else:
-                        mes += f"    Статус:  <i>подарена</i>\n\n"
+                    mes += f"    Название📖:  <i>{book[1]}</i>\n"
+                    mes += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+                    mes += f"    Приоритет❤:  <i>{book[4]}</i>\n"
 
     mes += "\nМеню: /cancel"
     if len(users_n) < 1:

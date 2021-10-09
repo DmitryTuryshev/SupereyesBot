@@ -232,13 +232,13 @@ async def cmd_adm_birthday(message: types.Message, state: FSMContext):
                 for index, book in enumerate(books):
                     if index > 3:
                         break
-                    mes += f"    Название:  <i>{book[1]}</i>\n"
-                    mes += f"    Автор:  <i>{book[2]}</i>\n"
-                    mes += f"    Приоритет:  <i>{book[4]}</i>\n"
+                    mes += f"    Название📖:  <i>{book[1]}</i>\n"
+                    mes += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+                    mes += f"    Приоритет❤:  <i>{book[4]}</i>\n"
                     if book[3] == "active":
-                        mes += f"    Статус:  <i>активна</i>\n\n"
+                        mes += f"    Статус🔄:  <i>активна</i>\n\n"
                     else:
-                        mes += f"    Статус:  <i>подарена</i>\n\n"
+                        mes += f"    Статус🔄:  <i>подарена</i>\n\n"
 
     mes += "\nМеню: /cancel\n\n"
     mes += "Выберите номер пользователя:"
@@ -278,13 +278,13 @@ async def user_number(message: types.Message, state: FSMContext):
         for index, book in enumerate(books):
             if index > 3:
                 break
-            mes += f"    Название:  <i>{book[1]}</i>\n"
-            mes += f"    Автор:  <i>{book[2]}</i>\n"
-            mes += f"    Приоритет:  <i>{book[4]}</i>\n"
+            mes += f"    Название📖:  <i>{book[1]}</i>\n"
+            mes += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+            mes += f"    Приоритет❤:  <i>{book[4]}</i>\n"
             if book[3] == "active":
-                mes += f"    Статус:  <i>активна</i>\n\n"
+                mes += f"    Статус🔄:  <i>активна</i>\n\n"
             else:
-                mes += f"    Статус:  <i>подарена</i>\n\n"
+                mes += f"    Статус🔄:  <i>подарена</i>\n\n"
             books_ch_st.append(book[0])
 
     mes += "Книги пользователей: /adm_book\n"
@@ -311,9 +311,9 @@ async def book_st_number(message: types.Message, state: FSMContext):
         return
     book = get_book(id)
     mes = "Книга\n\n"
-    mes += f"    Название:  <i>{book[1]}</i>\n"
-    mes += f"    Автор:  <i>{book[2]}</i>\n"
-    mes += f"    Приоритет:  <i>{book[4]}</i>\n\n"
+    mes += f"    Название📖:  <i>{book[1]}</i>\n"
+    mes += f"    Автор✍🏻:  <i>{book[2]}</i>\n"
+    mes += f"    Приоритет❤:  <i>{book[4]}</i>\n\n"
 
     mes += "Книги пользователей: /adm_book\n"
     mes += "Админ панель: /admin\n"
